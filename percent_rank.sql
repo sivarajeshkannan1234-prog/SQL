@@ -1,0 +1,65 @@
+use restaurants;
+CREATE TABLE production_sales (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    sales_amount DECIMAL(10,2)
+);
+
+INSERT INTO production_sales (product_id, product_name, sales_amount) VALUES
+(1, 'Laptop Pro 15', 1250.00),
+(2, 'Wireless Mouse', 25.50),
+(3, 'Mechanical Keyboard', 89.99),
+(4, 'USB-C Charger', 19.99),
+(5, '27 inch Monitor', 310.75),
+(6, 'Gaming Headset', 75.00),
+(7, 'External Hard Drive 1TB', 64.90),
+(8, 'Webcam HD', 45.25),
+(9, 'Bluetooth Speaker', 55.40),
+(10, 'Smartphone X', 899.99),
+(11, 'Tablet 10 inch', 299.49),
+(12, 'Smartwatch Series 5', 199.99),
+(13, 'Office Chair', 150.00),
+(14, 'Standing Desk', 420.00),
+(15, 'Graphics Card RTX', 699.99),
+(16, 'Power Bank 20000mAh', 39.99),
+(17, 'Wireless Earbuds', 120.00),
+(18, 'Router Dual Band', 89.50),
+(19, 'SSD 512GB', 79.99),
+(20, 'Printer LaserJet', 210.30),
+(21, 'Desk Lamp LED', 35.60),
+(22, 'Microphone USB', 95.00),
+(23, 'Fitness Tracker', 60.00),
+(24, 'Smart TV 55 inch', 650.00),
+(25, 'HDMI Cable', 12.99),
+(26, 'Portable Projector', 480.00),
+(27, 'Drone Camera', 850.00),
+(28, 'Action Camera 4K', 275.00),
+(29, 'Gaming Console', 499.99),
+(30, 'VR Headset', 399.99),
+(31, 'Electric Kettle', 45.00),
+(32, 'Air Fryer', 130.00),
+(33, 'Coffee Maker', 110.75),
+(34, 'Blender Pro', 89.00),
+(35, 'Refrigerator 300L', 780.00),
+(36, 'Washing Machine 7kg', 520.00),
+(37, 'Microwave Oven', 220.00),
+(38, 'Dishwasher', 610.00),
+(39, 'Ceiling Fan', 95.00),
+(40, 'Water Purifier', 250.00),
+(41, 'Electric Iron', 30.00),
+(42, 'Vacuum Cleaner', 140.00),
+(43, 'Hair Dryer', 28.50),
+(44, 'Smart Door Lock', 180.00),
+(45, 'Security Camera', 160.00),
+(46, 'Bluetooth Keyboard', 49.99),
+(47, 'Laptop Sleeve', 22.00),
+(48, 'Tablet Cover', 18.75),
+(49, 'Wireless Charger', 34.99),
+(50, 'Portable SSD 1TB', 145.00);
+
+select * from production_sales;
+
+select product_id,product_name,sales_amount,
+percent_rank() over(order by sales_amount desc) as Percentrank,
+rank() over(order by sales_amount desc) as ranks
+from production_sales;
