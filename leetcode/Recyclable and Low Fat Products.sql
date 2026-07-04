@@ -1,0 +1,22 @@
+create database leetcode;
+ use leetcode;
+-- Create Table
+ 
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    low_fats ENUM('Y', 'N'),
+    recyclable ENUM('Y', 'N')
+);
+
+-- Insert Data
+INSERT INTO products (product_id, low_fats, recyclable) 
+VALUES 
+(1, 'Y', 'Y'),
+(2, 'N', 'Y'),
+(3, 'Y', 'N'),
+(4, 'Y', 'Y'),
+(5, 'N', 'N');
+
+select *from products;
+
+select product_id from products where low_fats='Y' and  recyclable='Y'
